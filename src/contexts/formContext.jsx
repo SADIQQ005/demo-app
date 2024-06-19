@@ -73,8 +73,8 @@ const FormProvider = ({ children }) => {
     setLoading(true);
     const amount = 1000;
     const data = {
-      merchantId: "CkDywmwrbsGxrMk",
-      returnUrl: `${window.location.origin}/verify`,
+      merchantId: import.meta.env.VITE_CLIENT_ID,
+      returnUrl: import.meta.env.VITE_RETURN_URI,
       merchantReference: uuidv4(),
       totalAmount: (amount * quantity).toString(),
       currency: "NGN",

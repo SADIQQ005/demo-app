@@ -5,8 +5,10 @@ import { FormContext } from "../../contexts/formContext";
 import SecondStep from "./secondStep";
 import ComfirmStep from "./comfirmForm";
 
-const index = () => {
+const Index = () => {
   const { activeStep } = useContext(FormContext);
+
+  console.log("Payment URL:", import.meta.env.VITE_PAYMENT_URL);
 
   switch (activeStep) {
     case 0:
@@ -20,4 +22,4 @@ const index = () => {
   }
 };
 
-export default index;
+export default Index;

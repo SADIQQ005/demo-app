@@ -11,10 +11,10 @@ export const getPaymentAuth = () => {
 
     axios
       .post(
-        `https://authdev.routepay.com/connect/token`,
+        `${import.meta.env.VITE_AUTH_URL}/connect/token`,
         qs.stringify({
-          client_id: "CkDywmwrbsGxrMk",
-          client_secret: "JScDlRplmEbFbzjFRqCbvPBggxPErY",
+          client_id: import.meta.env.VITE_CLIENT_ID,
+          client_secret: import.meta.env.VITE_CLIENT_SECRET,
           grant_type: "client_credentials",
         }),
         config
@@ -42,7 +42,7 @@ export const SetRequestPayment = (paymentData, token) => {
   return new Promise((resolve, reject) => {
     axios
       .post(
-        `https://apidev.routepay.com/payment/api/v1/payment/SetRequest`,
+        `${import.meta.env.VITE_PAYMENT_URL}/payment/SetRequest`,
         paymentData,
         config
       )
@@ -69,7 +69,9 @@ export const getPaymentDetails = (paymentId, token) => {
     };
     axios
       .get(
-        `https://apidev.routepay.com/payment/api/v1/payment/GetTransaction/${paymentId}`,
+        `${
+          import.meta.env.VITE_PAYMENT_URL
+        }/payment/GetTransaction/${paymentId}`,
         config
       )
       .then((response) => {
