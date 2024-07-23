@@ -11,7 +11,7 @@ function index() {
           justifyContent: "center",
           alignItems: "center",
           height: { md: "100vh", xs: "80vh" },
-          background: "blue",
+          background: "#f2f2f2",
         }}
         item
         xs={12}
